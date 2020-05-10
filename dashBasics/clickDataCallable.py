@@ -47,15 +47,15 @@ app.layout = html.Div([
                     style = {'width':'30%','float':'left'}
                 ),
                 html.Div(
-                    html.Img(id = 'hover-image',src = 'children',height = '300'),
+                    html.Img(id = 'click-image',src = 'children',height = '300'),
                     #html.Pre(id = 'hover-data',style = {'paddingtop':35}),
                     style = {'width':'30%','float':'left'}
                 )
 ])
 
 
-@app.callback(Output('hover-image','src'),
-              [Input('wheels-plot','hoverData')])
+@app.callback(Output('click-image','src'),
+              [Input('wheels-plot','clickData')])
 
 def callback_image(hoverData):
     wheel=hoverData['points'][0]['y']
